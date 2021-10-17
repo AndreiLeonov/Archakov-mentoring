@@ -6,7 +6,7 @@ const App = () => {
 
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
 
-    const date = new Date().toLocaleString('ru-RU', options);
+    const date = new Date(2021, 5, 22).toLocaleString('ru-RU', options);
 
     return (
         <div style={{ marginLeft: '10px' }}>

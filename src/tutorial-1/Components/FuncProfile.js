@@ -1,6 +1,12 @@
 import React from 'react';
 
-const FuncProfile = ({ name = "пользователь", date = new Date(), title = "React-компонент" }) => {
+const FuncProfile = (props) => {
+
+    const {
+        name = "пользователь",
+        date = new Date().toLocaleString('ru-RU', { year: 'numeric', month: 'long', day: 'numeric' }),
+        title = "React-компонент"
+    } = props;
 
     return (
         <>

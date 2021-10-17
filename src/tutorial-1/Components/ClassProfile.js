@@ -1,6 +1,15 @@
 import React, {Component} from 'react';
 
 class ClassProfile extends Component {
+
+    static defaultProps = {
+        name: "пользователь",
+        date: new Date().toLocaleString('ru-RU', {
+            year: 'numeric', month: 'long', day: 'numeric'
+        }),
+        title: "React-компонент",
+    }
+
     render() {
 
         const { name, date, title } = this.props;
