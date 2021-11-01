@@ -4,8 +4,19 @@ import PersonIcon from '@mui/icons-material/Person';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const Item = ({ data, index, onDelete }) => {
+
+    const deleteOnClick = () => {
+        onDelete(index);
+    }
+
     return (
-        <ListItem>
+        <ListItem
+            secondaryAction={
+                <IconButton edge="end" aria-label="delete">
+                    <DeleteIcon onClick={deleteOnClick}/>
+                </IconButton>
+            }
+        >
             <ListItemAvatar>
                 <Avatar>
                     <PersonIcon />
@@ -29,9 +40,6 @@ const Item = ({ data, index, onDelete }) => {
                         </Typography>
                     </>
                 } />
-            <IconButton edge="end" aria-label="delete">
-                <DeleteIcon onClick={() => onDelete(index)}/>
-            </IconButton>
         </ListItem>
     );
 };
