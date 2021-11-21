@@ -1,6 +1,8 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
-const Article = ({ id }) => {
+const Article = () => {
+    const { id } = useParams();
     return (
         <div>
             <h1>Статья №{id}</h1>
