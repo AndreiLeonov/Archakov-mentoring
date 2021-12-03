@@ -9,6 +9,16 @@ import { Route, Routes } from 'react-router-dom';
 
 export default function App() {
 
+    function ProtectedRoute({ path, text }) {
+        const token = window.localStorage.getItem('token');
+
+        return <Route path={path} render={() => {
+            if (token) {
+                return text;
+            }
+        }}/>;
+    }
+
     return (
         <div className="App">
             <Header/>
@@ -16,6 +26,7 @@ export default function App() {
                     <Route path={'/'} element={<Home/>} exact={true}/>
                     <Route path={'/about'} element={<About/>}/>
                     <Route path={'/post/:id'} element={<Article/>} exact={true}/>
+                    <ProtectedRoute path={'/profile'} text={'ТЕСТОВЫЙ ТЕКСТ'}/>
                     <Route path={'*'} element={<h2 style={{ textAlign: 'center' }}>Страница не найдена!</h2>}/>
                 </Routes>
             <br/>
