@@ -5,12 +5,15 @@ import App from "./tutorial-7/App";
 import {
     BrowserRouter as Router
 } from 'react-router-dom';
+import { MuiThemeProvider } from 'material-ui';
 
 ReactDOM.render(
   <React.StrictMode>
-      <Router>
-          <App />
-      </Router>
+      <MuiThemeProvider>
+          <Router>
+              <App />
+          </Router>
+      </MuiThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
